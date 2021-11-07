@@ -1,10 +1,18 @@
-function ProjectList(props) {
-    return (
-    <div >
-        <img  src={props.img} />
-    </div>
-    )
-    
-}
+import React from "react";
 
-export default ProjectList 
+const ProjectList = ({ projects }) => {
+  console.log(projects);
+  return (
+    <div className="cards-wrapper">
+      {projects &&
+        projects.map((p, index) => (
+          <div key={index} className={`card All ${p.category}`}>
+            {" "}
+            <img src={p.img} />
+          </div>
+        ))}
+    </div>
+  );
+};
+
+export default ProjectList;

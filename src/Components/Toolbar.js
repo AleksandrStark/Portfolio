@@ -1,34 +1,19 @@
-function Toolbar(props) {
+import React from "react";
 
-    
+const Toolbar = ({ selected, filters, onSelectFilter }) => {
+  const onClickFilter = (e) => {
+    onSelectFilter(e);
+  };
 
-    return(
-        <div>
-    <button value="All" onClick={()=>{
-        props.onSelectFilter(props.value)
-        }}
-    >
-    All
-    </button>
-    <button value="Websites"onClick={()=>{
-        props.onSelectFilter(props.value)}}
-    >
-    Websites
-    </button>
-    <button value="Flayers" onClick={()=>{
-        props.onSelectFilter(props.value)}}
-    >
-    Flayers
-    </button>
-    <button value="Business Cards" onClick={()=>{
-        props.onSelectFilter(props.value)}}
-    >
-    Business Cards
-    </button>
+  return (
+    <div>
+      {filters.map((filter, index) => (
+        <button key={index} onClick={onClickFilter}>
+          {filter}
+        </button>
+      ))}
     </div>
+  );
+};
 
-    )
-}
-
-
-export default Toolbar
+export default Toolbar;
