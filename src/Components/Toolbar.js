@@ -7,8 +7,8 @@ const Toolbar = ({ selected, filters, onSelectFilter }) => {
 
   return (
     <div>
-      {filters.map((filter, index) => (
-        <button key={index} onClick={onClickFilter}>
+      {filters.map((filter) => (
+        <button key={Math.random()} onClick={onClickFilter}>
           {filter}
         </button>
       ))}
